@@ -9,6 +9,7 @@ ruby '2.4.3'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
+gem 'cloudinary'
 gem 'figaro'
 gem 'font-awesome-sass'
 gem 'simple_form'
