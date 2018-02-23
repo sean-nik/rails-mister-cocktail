@@ -11,7 +11,7 @@
           <strong><%= dose.ingredient.name %></strong> <%= dose.description %>
             <%= link_to "Delete", cocktail_dose_path(@cocktail, dose),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure?" }%>
             <% end %>
           </h4>
         </li>
@@ -20,7 +20,7 @@
     <% if @cocktail.photo.present? %>
       <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
     <% end %>
-    <div><%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-default" %></div>
-    <div><%= link_to "Return to Cocktails", root_path, class: "btn btn-primary" %></div>
+    <div class="nav-button"><%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-default" %></div>
+    <div class="nav-button"><%= link_to "Return to Cocktails", root_path, class: "btn btn-primary" %></div>
   </div>
 </div>
