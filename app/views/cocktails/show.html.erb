@@ -1,22 +1,26 @@
-<h1><%= @cocktail.name %></h1>
-<h2>Ingredients:</h2>
-<ul>
-  <li>
-  <% @cocktail.doses.each do |dose| %>
-  <%= dose.ingredient.name %>
-  <%= dose.description %>
-  <%= link_to "Delete", cocktail_dose_path(@cocktail, dose),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-  <% end %>
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
 
-<% if @cocktail.photo.present? %>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail) %>
-
-
-<%= link_to "Return to Cocktails", root_path %>
+    <h1><%= @cocktail.name %></h1>
+    <h2>Ingredients:</h2>
+    <% if @cocktail.doses.present? %>
+      <ul>
+        <li>
+        <% @cocktail.doses.each do |dose| %>
+          <h4>
+          <strong><%= dose.ingredient.name %></strong> <%= dose.description %>
+            <%= link_to "Delete", cocktail_dose_path(@cocktail, dose),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+            <% end %>
+          </h4>
+        </li>
+      </ul>
+    <% end %>
+    <% if @cocktail.photo.present? %>
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <div><%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-default" %></div>
+    <div><%= link_to "Return to Cocktails", root_path, class: "btn btn-primary" %></div>
+  </div>
+</div>
