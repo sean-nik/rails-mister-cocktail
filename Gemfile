@@ -6,8 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.4.3'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
+gem 'figaro'
 gem 'font-awesome-sass'
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
