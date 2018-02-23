@@ -20,11 +20,13 @@
     <% end %>
 
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-                 url(<%= cl_image_path("cocktails",
-      width: 400, height: 300, crop: :fill) %>)">
-        <%= link_to "Add New Cocktail", new_cocktail_path, class: 'btn btn-primary'%>
-      </div>
+      <%= link_to new_cocktail_path, class: 'no-deco' do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                   url(<%= cl_image_path("cocktails",
+        width: 400, height: 300, crop: :fill) %>)">
+          <h2 class="card-category">Add A Cocktail</h2>
+        </div>
+      <% end %>
     </div>
 
   </div>
