@@ -1,17 +1,19 @@
-<div class="container">
-  <div class="row">
+<div class="container-frame">
+  <div class="container">
+    <div class="row">
 
-    <h1>Create a new Cocktail</h1>
+      <h1>Create a new Cocktail</h1>
 
-    <%= simple_form_for @cocktail do |f| %>
-      <%= f.input :name %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.button :submit %>
-    <% end %>
+      <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit %>
+      <% end %>
 
-    <%= link_to "Return to Cocktails", root_path, class: 'btn btn-primary' %>
+      <%= link_to "Return to Cocktails", root_path, class: 'btn btn-primary' %>
 
+    </div>
   </div>
 </div>
 

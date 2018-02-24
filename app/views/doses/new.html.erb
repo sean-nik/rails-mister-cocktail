@@ -1,14 +1,15 @@
-<div class="container">
-  <div class="row">
+<div class="container-frame">
+  <div class="container">
+    <div class="row">
 
-    <h1>Add an ingredient</h1>
+      <h1>Add an ingredient</h1>
+      <%= simple_form_for([@cocktail, @dose], html: { class: 'form-horizontal' }) do |f| %>
+        <%= f.input :description, label: 'Dose description' %>
+        <%= f.input :ingredient_id, collection: Ingredient.all %>
+        <%= f.button :submit %>
+      <% end %>
 
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :description, label: 'Dose description' %>
-      <%= f.input :ingredient_id, collection: Ingredient.all %>
-      <%= f.button :submit %>
-    <% end %>
-
-    <%= link_to "Return to Cocktail", cocktail_path(@cocktail), class: 'btn btn-primary' %>
+      <%= link_to "Return to Cocktail", cocktail_path(@cocktail), class: 'btn btn-primary' %>
+    </div>
   </div>
 </div>
